@@ -1,0 +1,39 @@
+/* Общие брейкпоинты: телефон ≤480, планшет ≤768, ноутбук ≤1280 */
+
+:root {
+    --site-gutter: clamp(1rem, 4vw, 1.5rem);
+    --header-height: 80px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 68px;
+    }
+}
+
+html {
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Утилита для контейнеров страниц */
+.site-container {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--site-gutter);
+    padding-right: var(--site-gutter);
+}
+
+@media (max-width: 1280px) {
+    .site-container {
+        max-width: 100%;
+    }
+}
