@@ -2,7 +2,8 @@
     <header :class="['header', { 'header--scrolled': isScrolled }]">
         <div class="header__container">
             <Link href="/" class="header__logo">
-                <img src="/public/logo.ico" alt="Логотип" />
+                <img :src="getLogoUrl()" alt="Логотип">
+
             </Link>
 
             <nav class="header__nav header__nav--desktop">
@@ -170,7 +171,9 @@ const handleClickOutside = (event) => {
         showMenu.value = false
     }
 }
-
+function getLogoUrl() {
+    return '/logo.ico';
+}
 onMounted(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
     document.addEventListener('click', handleClickOutside)
