@@ -24,7 +24,7 @@ class SeoController extends Controller
             '/email',
             '/password',
             '/logout',
-            '/api/',
+            '/data/',
             '/storage/',
             '/sanctum/',
         ];

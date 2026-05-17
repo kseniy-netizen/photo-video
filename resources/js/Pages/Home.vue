@@ -147,7 +147,7 @@
                 <div v-else class="team__grid">
                     <div class="team-card" v-for="member in team" :key="member.id">
                         <div class="team-card__image-wrapper">
-                            <img :src="member.image_url" :alt="member.name" class="team-card__photo">
+                            <img :src="resolveMediaUrl(member.image_url)" :alt="member.name" class="team-card__photo">
                         </div>
 
                         <div class="team-card__content">
@@ -267,7 +267,7 @@
                 <div v-else class="portfolio__masonry">
                     <!-- Большое фото свадьбы (индекс 0) — слева, 2x2 -->
                     <div class="portfolio__item portfolio__item--large">
-                        <img :src="portfolio[0].image_url" :alt="portfolio[0].title"/>
+                        <img :src="resolveMediaUrl(portfolio[0].image_url)" :alt="portfolio[0].title"/>
                         <div class="portfolio__meta">
                             <span class="portfolio__tag">{{ portfolio[0].tag }}</span>
                             <h4>{{ portfolio[0].title }}</h4>
@@ -276,7 +276,7 @@
 
                     <!-- Лес (индекс 1) — справа сверху -->
                     <div class="portfolio__item">
-                        <img :src="portfolio[1].image_url" :alt="portfolio[1].title"/>
+                        <img :src="resolveMediaUrl(portfolio[1].image_url)" :alt="portfolio[1].title"/>
                         <div class="portfolio__meta">
                             <span class="portfolio__tag">{{ portfolio[1].tag }}</span>
                             <h4>{{ portfolio[1].title }}</h4>
@@ -285,7 +285,7 @@
 
                     <!-- Девушка с шарами (индекс 2) — справа рядом с лесом -->
                     <div class="portfolio__item">
-                        <img :src="portfolio[2].image_url" :alt="portfolio[2].title"/>
+                        <img :src="resolveMediaUrl(portfolio[2].image_url)" :alt="portfolio[2].title"/>
                         <div class="portfolio__meta">
                             <span class="portfolio__tag">{{ portfolio[2].tag }}</span>
                             <h4>{{ portfolio[2].title }}</h4>
@@ -348,6 +348,7 @@ import {ref, onMounted, onUnmounted, nextTick} from 'vue'
 import axios from 'axios'
 import { Link } from '@inertiajs/vue3'
 import { useRequireAuth } from '../composables/useRequireAuth'
+import { resolveMediaUrl } from '../utils/mediaUrl'
 
 const { handleCartLinkClick } = useRequireAuth()
 
@@ -686,7 +687,7 @@ const portfolioError = ref(null)
 const loadTeam = async () => {
     try {
         teamLoading.value = true
-        const {data} = await axios.get('/api/specialists')
+        const {data} = await axios.get('/data/specialists')
         team.value = data || []
     } catch (err) {
         teamError.value = 'Ошибка загрузки специалистов: ' + (err?.message || String(err))
@@ -698,7 +699,7 @@ const loadTeam = async () => {
 const loadPortfolio = async () => {
     try {
         portfolioLoading.value = true
-        const {data} = await axios.get('/api/portfolio')
+        const {data} = await axios.get('/data/portfolio')
         portfolio.value = data || []
     } catch (err) {
         portfolioError.value = 'Ошибка загрузки портфолио: ' + (err?.message || String(err))
@@ -805,7 +806,7 @@ let cleanupScroll = null
 let cleanupDrag = null
 
 function getLogoUrl() {
-    return '/logo.ico';
+    return '/photo.png';
 }
 
 onMounted(async () => {

@@ -113,7 +113,7 @@ const toggleStudioInCart = (studio) => {
 };
 const fetchStudios = async () => {
   try {
-    const { data } = await axios.get('/api/studios');
+    const { data } = await axios.get('/data/studios');
     studios.value = data || [];
   } catch {
     studios.value = [];

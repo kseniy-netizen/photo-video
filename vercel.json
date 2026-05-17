@@ -3,20 +3,24 @@
     "installCommand": "npm install",
     "buildCommand": "npm run build",
     "functions": {
-        "server.php": {
+        "api/index.php": {
             "runtime": "vercel-php@0.9.0",
             "maxDuration": 30
         }
     },
     "routes": [
         { "src": "/build/(.*)", "dest": "/public/build/$1" },
+        { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
         { "src": "/fonts/(.*)", "dest": "/public/fonts/$1" },
         { "src": "/photo.png", "dest": "/public/photo.png" },
         { "src": "/logo.ico", "dest": "/public/logo.ico" },
+        { "src": "/logo.jpg", "dest": "/public/logo.jpg" },
+        { "src": "/log.png", "dest": "/public/log.png" },
         { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
         { "src": "/robots.txt", "dest": "/public/robots.txt" },
         { "src": "/css/(.*)", "dest": "/public/css/$1" },
         { "src": "/js/(.*)", "dest": "/public/js/$1" },
-        { "src": "/(.*)", "dest": "/server.php" }
+        { "src": "/data/(.*)", "dest": "/api/index.php" },
+        { "src": "/(.*)", "dest": "/api/index.php" }
     ]
 }

@@ -86,7 +86,7 @@ const getSocialLink = (name) => socialLinks[name] || '#'
 
 onMounted(async () => {
     try {
-        const { data } = await axios.get('/api/icons')
+        const { data } = await axios.get('/data/icons')
         icons.value = data || []
     } catch {
         icons.value = []
