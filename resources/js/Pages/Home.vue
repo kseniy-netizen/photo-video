@@ -805,7 +805,7 @@ let cleanupScroll = null
 let cleanupDrag = null
 
 function getLogoUrl() {
-    return '/photo.png';
+    return '/logo.ico';
 }
 
 onMounted(async () => {
@@ -990,11 +990,14 @@ h4 {
 /* Luxury / Shoot hero mark */
 .brand-mark {
     width: 100%;
+    max-width: min(100%, 1100px);
+    margin: 0 auto;
     position: relative;
     display: flex !important;
     flex-direction: column;
     align-items: center;
     padding-top: 0.4rem;
+    overflow: hidden;
 }
 
 .brand-mark__word {
@@ -1018,15 +1021,14 @@ h4 {
 }
 
 .brand-mark__word--left {
-    left: -5%;
-    transform: translate(-60%, -50%);
+    left: 50%;
+    transform: translate(calc(-100% - clamp(7rem, 18vw, 11rem)), -50%);
     letter-spacing: 1px;
 }
 
 .brand-mark__word--right {
-    right: 2%;
-    transform: translate(56%, -50%);
-
+    left: 50%;
+    transform: translate(clamp(7rem, 18vw, 11rem), -50%);
 }
 
 .brand-mark__circle {
@@ -1101,15 +1103,15 @@ h4 {
 }
 
 .brand-mark__sub-left {
-    left: -10%;
+    left: 50%;
     top: 70%;
-    /* Под LUXURY */
+    transform: translate(calc(-100% - clamp(5rem, 14vw, 9rem)), 0);
 }
 
 .brand-mark__sub-right {
-    right: -6%;
+    left: 50%;
     top: 70%;
-    /* Под SHOOT */
+    transform: translate(clamp(5rem, 14vw, 9rem), 0);
 }
 
 
@@ -1125,11 +1127,11 @@ h4 {
     }
 
     .brand-mark__word--left {
-        transform: translate(-60%, -50%);
+        transform: translate(calc(-100% - clamp(4.5rem, 14vw, 7rem)), -50%);
     }
 
     .brand-mark__word--right {
-        transform: translate(50%, -50%);
+        transform: translate(clamp(4.5rem, 14vw, 7rem), -50%);
     }
 
     .brand-mark__circle {

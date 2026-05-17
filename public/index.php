@@ -7,6 +7,12 @@ define('LARAVEL_START', microtime(true));
 
 $isVercel = (bool) getenv('VERCEL');
 
+if ($isVercel) {
+    // Prevent Laravel from treating /api as the app base path (breaks Vite + /api routes).
+    $_SERVER['SCRIPT_NAME'] = '/index.php';
+    $_SERVER['PHP_SELF'] = '/index.php';
+}
+
 // Vercel: writable bootstrap cache and storage in /tmp
 $tmpPath = '/tmp';
 $bootstrapPath = $tmpPath . '/bootstrap';

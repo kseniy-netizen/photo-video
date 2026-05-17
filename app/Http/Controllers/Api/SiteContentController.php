@@ -10,32 +10,33 @@ use Illuminate\Support\Facades\Schema;
 
 class SiteContentController extends Controller
 {
+    private function jsonRows(callable $query): JsonResponse
+    {
+        try {
+            return response()->json($query());
+        } catch (\Throwable) {
+            return response()->json([]);
+        }
+    }
+
     public function specialists(): JsonResponse
     {
-        $rows = DB::table('specialists')->orderBy('id')->get();
-
-        return response()->json($rows);
+        return $this->jsonRows(fn () => DB::table('specialists')->orderBy('id')->get());
     }
 
     public function portfolio(): JsonResponse
     {
-        $rows = DB::table('portfolio')->orderBy('id')->limit(3)->get();
-
-        return response()->json($rows);
+        return $this->jsonRows(fn () => DB::table('portfolio')->orderBy('id')->limit(3)->get());
     }
 
     public function icons(): JsonResponse
     {
-        $rows = DB::table('icons')->orderBy('order_index')->orderBy('id')->get();
-
-        return response()->json($rows);
+        return $this->jsonRows(fn () => DB::table('icons')->orderBy('order_index')->orderBy('id')->get());
     }
 
     public function studios(): JsonResponse
     {
-        $rows = DB::table('studio')->orderBy('id')->get();
-
-        return response()->json($rows);
+        return $this->jsonRows(fn () => DB::table('studio')->orderBy('id')->get());
     }
 
     public function homeAsset(Request $request): JsonResponse
@@ -59,28 +60,26 @@ class SiteContentController extends Controller
      */
     public function photoCategories(): JsonResponse
     {
-        if (! Schema::hasTable('photos')) {
-            return response()->json([]);
-        }
+        return $this->jsonRows(function () {
+            if (! Schema::hasTable('photos')) {
+                return [];
+            }
 
-        $categories = DB::table('photos')->orderBy('id')->limit(6)->get();
+            return DB::table('photos')->orderBy('id')->limit(6)->get()->map(function ($cat) {
+                $cover = DB::table('gallery_photos')
+                    ->where('category_id', $cat->id)
+                    ->where('is_featured', true)
+                    ->orderBy('sort_order')
+                    ->value('image_url');
 
-        $out = $categories->map(function ($cat) {
-            $cover = DB::table('gallery_photos')
-                ->where('category_id', $cat->id)
-                ->where('is_featured', true)
-                ->orderBy('sort_order')
-                ->value('image_url');
-
-            return [
-                'id' => $cat->id,
-                'name' => $cat->name,
-                'photo_count' => (int) ($cat->photo_count ?? 0),
-                'cover_image' => $cover ?? '',
-            ];
+                return [
+                    'id' => $cat->id,
+                    'name' => $cat->name,
+                    'photo_count' => (int) ($cat->photo_count ?? 0),
+                    'cover_image' => $cover ?? '',
+                ];
+            })->values()->all();
         });
-
-        return response()->json($out);
     }
 
     /**
@@ -88,14 +87,12 @@ class SiteContentController extends Controller
      */
     public function galleryPhotos(int $categoryId): JsonResponse
     {
-        $rows = DB::table('gallery_photos')
+        return $this->jsonRows(fn () => DB::table('gallery_photos')
             ->select('id', 'title', 'description', 'image_url')
             ->where('category_id', $categoryId)
             ->where('is_featured', false)
             ->orderBy('sort_order')
             ->limit(6)
-            ->get();
-
-        return response()->json($rows);
+            ->get());
     }
 }
