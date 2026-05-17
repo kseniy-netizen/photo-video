@@ -172,7 +172,7 @@ const handleClickOutside = (event) => {
     }
 }
 function getLogoUrl() {
-    return '/photo.png';
+    return '/logo.ico';
 }
 onMounted(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
