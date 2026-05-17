@@ -2,7 +2,7 @@
     <header :class="['header', { 'header--scrolled': isScrolled }]">
         <div class="header__container">
             <Link href="/" class="header__logo">
-                <img src="/logo.ico" alt="Логотип" />
+                <img src="/logo.jpg" alt="Логотип" />
             </Link>
 
             <nav class="header__nav header__nav--desktop">
