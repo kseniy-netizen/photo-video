@@ -835,36 +835,36 @@ onUnmounted(() => {
 
 @font-face {
     font-family: 'logos';
-    src: url(/storage/app/public/fonts/A_DAY_WITHOUT_SUN.ttf);
+    src: url(/public/fonts/A_DAY_WITHOUT_SUN.ttf);
 }
 
 @font-face {
     font-family: 'olympiadeco';
-    src: url(/storage/app/public/fonts/olympiadeco.ttf);
+    src: url(/public/fonts/olympiadeco.ttf);
 }
 
 @font-face {
     font-family: 'neon';
-    src: url(/storage/app/public/fonts/aa_neon.ttf);
+    src: url(/public/fonts/aa_neon.ttf);
 }
 
 @font-face {
     font-family: 'allodswest';
-    src: url(/storage/app/public/fonts/allodswest.ttf);
+    src: url(/public/fonts/allodswest.ttf);
 }
 
 @font-face {
     font-family: 'kurale';
-    src: url(/storage/app/public/fonts/kurale.ttf);
+    src: url(/public/fonts/kurale.ttf);
 }
 
 @font-face {
     font-family: 'bonjourmonamirus';
-    src: url(/storage/app/public/fonts/bonjourmonamirus.ttf);
+    src: url(/public/fonts/bonjourmonamirus.ttf);
 }
 @font-face {
     font-family: 'icekingdom';
-    src: url(/storage/app/public/fonts/icekingdom.ttf);
+    src: url(/public/fonts/icekingdom.ttf);
 }
 
 .home {
