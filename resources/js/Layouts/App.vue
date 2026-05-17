@@ -5,7 +5,7 @@ import SeoHead from '../Components/SeoHead.vue';
 
 </script>
 <template>
-    <SeoHead />
+    <SeoHead/>
     <div id="app">
         <Header/>
         <main class="main-content">
@@ -140,4 +140,5 @@ body {
         transform: translateX(0);
     }
 }
+
 </style>
