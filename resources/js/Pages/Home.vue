@@ -263,31 +263,34 @@
 
                 <div v-if="portfolioLoading" class="loading">Загрузка...</div>
                 <div v-else-if="portfolioError" class="error">{{ portfolioError }}</div>
+                <p v-else-if="portfolio.length === 0" class="portfolio__empty">
+                    Работы портфолио пока не загружены.
+                </p>
 
                 <div v-else class="portfolio__masonry">
                     <!-- Большое фото свадьбы (индекс 0) — слева, 2x2 -->
-                    <div class="portfolio__item portfolio__item--large">
-                        <img :src="resolveMediaUrl(portfolio[0].image_url)" :alt="portfolio[0].title"/>
+                    <div v-if="portfolio[0]" class="portfolio__item portfolio__item--large">
+                        <img :src="resolveMediaUrl(portfolio[0].image_url)" :alt="portfolio[0].title || ''"/>
                         <div class="portfolio__meta">
-                            <span class="portfolio__tag">{{ portfolio[0].tag }}</span>
+                            <span v-if="portfolio[0].tag" class="portfolio__tag">{{ portfolio[0].tag }}</span>
                             <h4>{{ portfolio[0].title }}</h4>
                         </div>
                     </div>
 
                     <!-- Лес (индекс 1) — справа сверху -->
-                    <div class="portfolio__item">
-                        <img :src="resolveMediaUrl(portfolio[1].image_url)" :alt="portfolio[1].title"/>
+                    <div v-if="portfolio[1]" class="portfolio__item">
+                        <img :src="resolveMediaUrl(portfolio[1].image_url)" :alt="portfolio[1].title || ''"/>
                         <div class="portfolio__meta">
-                            <span class="portfolio__tag">{{ portfolio[1].tag }}</span>
+                            <span v-if="portfolio[1].tag" class="portfolio__tag">{{ portfolio[1].tag }}</span>
                             <h4>{{ portfolio[1].title }}</h4>
                         </div>
                     </div>
 
                     <!-- Девушка с шарами (индекс 2) — справа рядом с лесом -->
-                    <div class="portfolio__item">
-                        <img :src="resolveMediaUrl(portfolio[2].image_url)" :alt="portfolio[2].title"/>
+                    <div v-if="portfolio[2]" class="portfolio__item">
+                        <img :src="resolveMediaUrl(portfolio[2].image_url)" :alt="portfolio[2].title || ''"/>
                         <div class="portfolio__meta">
-                            <span class="portfolio__tag">{{ portfolio[2].tag }}</span>
+                            <span v-if="portfolio[2].tag" class="portfolio__tag">{{ portfolio[2].tag }}</span>
                             <h4>{{ portfolio[2].title }}</h4>
                         </div>
                     </div>
@@ -2592,7 +2595,8 @@ h4 {
 
 /* Loading / error */
 .loading,
-.error {
+.error,
+.portfolio__empty {
     color: #ffffff;
     text-align: center;
     padding: 2rem 0;
