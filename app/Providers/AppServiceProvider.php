@@ -11,7 +11,27 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        if (! getenv('VERCEL')) {
+            return;
+        }
+
+        $this->applyVercelDefaults();
+    }
+
+    private function applyVercelDefaults(): void
+    {
+        putenv('CACHE_DRIVER=array');
+        $_ENV['CACHE_DRIVER'] = 'array';
+
+        putenv('SESSION_DRIVER=cookie');
+        $_ENV['SESSION_DRIVER'] = 'cookie';
+
+        putenv('LOG_CHANNEL=stderr');
+        $_ENV['LOG_CHANNEL'] = 'stderr';
+
+        $viewsPath = '/tmp/framework/views';
+        putenv('VIEW_COMPILED_PATH=' . $viewsPath);
+        $_ENV['VIEW_COMPILED_PATH'] = $viewsPath;
     }
 
     /**
