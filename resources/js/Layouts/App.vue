@@ -15,7 +15,6 @@ import SeoHead from '../Components/SeoHead.vue';
     </div>
 </template>
 
-
 <style>
 * {
     margin: 0;
