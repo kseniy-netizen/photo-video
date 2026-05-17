@@ -10,6 +10,7 @@
     },
     "routes": [
         { "src": "/build/(.*)", "dest": "/public/build/$1" },
+        { "src": "/assets/(.*)", "dest": "/public/build/assets/$1" },
         { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
         { "src": "/fonts/(.*)", "dest": "/public/fonts/$1" },
         { "src": "/photo.png", "dest": "/public/photo.png" },
