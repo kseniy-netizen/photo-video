@@ -2,7 +2,7 @@
     <header :class="['header', { 'header--scrolled': isScrolled }]">
         <div class="header__container">
             <Link href="/" class="header__logo">
-                <img src="/storage/app/public/images/logo.jpg" alt="Логотип" />
+                <img src="public/logo.ico" alt="Логотип" />
             </Link>
 
             <nav class="header__nav header__nav--desktop">
@@ -187,7 +187,7 @@ onUnmounted(() => {
 
 @font-face {
     font-family: 'allodswest';
-    src: url(/storage/app/public/fonts/allodswest.ttf);
+    src: url(public/fonts/allodswest.ttf);
 }
 
 button, a{
