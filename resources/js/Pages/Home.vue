@@ -920,7 +920,7 @@ h4 {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 900px;
+    max-width: 1900px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -994,7 +994,6 @@ h4 {
 /* Luxury / Shoot hero mark */
 .brand-mark {
     width: 100%;
-    max-width: min(100%, 1100px);
     margin: 0 auto;
     position: relative;
     display: flex !important;
@@ -1025,13 +1024,13 @@ h4 {
 }
 
 .brand-mark__word--left {
-    left: 50%;
+    left: 45%;
     transform: translate(calc(-100% - clamp(7rem, 18vw, 11rem)), -50%);
     letter-spacing: 1px;
 }
 
 .brand-mark__word--right {
-    left: 50%;
+    left: 54%;
     transform: translate(clamp(7rem, 18vw, 11rem), -50%);
 }
 
@@ -1107,13 +1106,13 @@ h4 {
 }
 
 .brand-mark__sub-left {
-    left: 50%;
+    left: 42%;
     top: 70%;
     transform: translate(calc(-100% - clamp(5rem, 14vw, 9rem)), 0);
 }
 
 .brand-mark__sub-right {
-    left: 50%;
+    left: 56%;
     top: 70%;
     transform: translate(clamp(5rem, 14vw, 9rem), 0);
 }
