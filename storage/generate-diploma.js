@@ -491,7 +491,7 @@ const doc = new Document({
   }],
 });
 
-const outPath = process.argv[2] || 'c:\\OSPanel\\domains\\photo-video\\storage\\Диплом-мой.docx';
+const outPath = process.argv[2];
 
 Packer.toBuffer(doc).then((buffer) => {
   fs.writeFileSync(outPath, buffer);
