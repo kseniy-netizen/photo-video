@@ -15,7 +15,7 @@
                     <div class="brand-mark__circle" aria-hidden="true">
                         <span class="brand-mark__tick brand-mark__tick--top" aria-hidden="true"></span>
                         <span class="brand-mark__tick brand-mark__tick--bottom" aria-hidden="true"></span>
-                        <img class="brand-mark__circle-img" src="/storage/app/public/images/photo.png"
+                        <img class="brand-mark__circle-img" src="/photo.png"
                              alt="Camera lens"/>
                     </div>
                     <span class="brand-mark__word brand-mark__word--right">SHOOT</span>
@@ -835,36 +835,36 @@ onUnmounted(() => {
 
 @font-face {
     font-family: 'logos';
-    src: url(/public/fonts/A_DAY_WITHOUT_SUN.ttf);
+    src: url(/fonts/A_DAY_WITHOUT_SUN.ttf);
 }
 
 @font-face {
     font-family: 'olympiadeco';
-    src: url(/public/fonts/olympiadeco.ttf);
+    src: url(/fonts/olympiadeco.ttf);
 }
 
 @font-face {
     font-family: 'neon';
-    src: url(/public/fonts/aa_neon.ttf);
+    src: url(/fonts/aa_neon.ttf);
 }
 
 @font-face {
     font-family: 'allodswest';
-    src: url(/public/fonts/allodswest.ttf);
+    src: url(/fonts/allodswest.ttf);
 }
 
 @font-face {
     font-family: 'kurale';
-    src: url(/public/fonts/kurale.ttf);
+    src: url(/fonts/kurale.ttf);
 }
 
 @font-face {
     font-family: 'bonjourmonamirus';
-    src: url(/public/fonts/bonjourmonamirus.ttf);
+    src: url(/fonts/bonjourmonamirus.ttf);
 }
 @font-face {
     font-family: 'icekingdom';
-    src: url(/public/fonts/icekingdom.ttf);
+    src: url(/fonts/icekingdom.ttf);
 }
 
 .home {

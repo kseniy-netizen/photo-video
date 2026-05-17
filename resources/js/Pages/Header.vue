@@ -187,7 +187,7 @@ onUnmounted(() => {
 
 @font-face {
     font-family: 'allodswest';
-    src: url(public/fonts/allodswest.ttf);
+    src: url(/fonts/allodswest.ttf);
 }
 
 button, a{

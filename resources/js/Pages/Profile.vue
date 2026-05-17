@@ -369,7 +369,7 @@ const showToast = (title, message, type = 'success') => {
 
 @font-face {
     font-family: 'allodswest';
-    src: url(/storage/app/public/fonts/allodswest.ttf);
+    src: url(/fonts/allodswest.ttf);
 }
 
 label, span{

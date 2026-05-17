@@ -245,11 +245,11 @@ const submitOrder = () => {
 
 @font-face {
     font-family: 'allodswest';
-    src: url(/storage/app/public/fonts/allodswest.ttf);
+    src: url(/fonts/allodswest.ttf);
 }
 @font-face {
     font-family: 'olympiadeco';
-    src: url(/storage/app/public/fonts/olympiadeco.ttf);
+    src: url(/fonts/olympiadeco.ttf);
 }
 h2{
     font-family: 'olympiadeco' !important;
