@@ -15,8 +15,7 @@
                     <div class="brand-mark__circle" aria-hidden="true">
                         <span class="brand-mark__tick brand-mark__tick--top" aria-hidden="true"></span>
                         <span class="brand-mark__tick brand-mark__tick--bottom" aria-hidden="true"></span>
-                        <img class="brand-mark__circle-img" src="/photo.png"
-                             alt="Camera lens"/>
+                        <img :src="getLogoUrl()" class="brand-mark__circle-img" alt="Camera lens">
                     </div>
                     <span class="brand-mark__word brand-mark__word--right">SHOOT</span>
                     <span class="brand-mark__sub-right">Наше воплощение</span>
@@ -804,6 +803,10 @@ function onResize() {
 let cleanupWebGL = null
 let cleanupScroll = null
 let cleanupDrag = null
+
+function getLogoUrl() {
+    return '/photo.png';
+}
 
 onMounted(async () => {
     loadTeam()
