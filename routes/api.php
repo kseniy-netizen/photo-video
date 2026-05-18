@@ -28,5 +28,5 @@ Route::get('/home-asset', [SiteContentController::class, 'homeAsset']);
 Route::get('/photo-categories', [SiteContentController::class, 'photoCategories']);
 Route::get('/gallery-photos/{categoryId}', [SiteContentController::class, 'galleryPhotos']);
 
-//Route::get('/photo-categories', [PhotoGalleryController::class, 'categories']);
-//Route::get('/gallery-photos/{categoryId}', [PhotoGalleryController::class, 'galleryPhotos']);
+Route::get('/photo-categories', [PhotoGalleryController::class, 'categories']);
+Route::get('/gallery-photos/{categoryId}', [PhotoGalleryController::class, 'galleryPhotos']);

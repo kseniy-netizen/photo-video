@@ -83,11 +83,11 @@ class SiteContentController extends Controller
     public function photoCategories(): JsonResponse
     {
         return $this->jsonRows(function () {
-            if (! Schema::hasTable('photos')) {
+            if (! Schema::hasTable('photos_categories')) {
                 return [];
             }
 
-            $categories = DB::table('photos')->orderBy('id')->limit(6)->get();
+            $categories = DB::table('photos_categories')->orderBy('id')->limit(6)->get();
 
             return $categories->map(function ($cat) {
                 $cover = DB::table('gallery_photos')

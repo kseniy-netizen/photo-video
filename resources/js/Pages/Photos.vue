@@ -235,7 +235,7 @@ const getCategoryTag = (name) => {
 const fetchCategories = async () => {
     loading.value = true
     try {
-        const { data } = await axios.get('/data/photo-categories')
+        const { data } = await axios.get('/api/photo-categories')
         const fits = {
             'ИНДИВИДУАЛЬНЫЕ': 'contain',
             'СЕМЕЙНАЯ': 'cover',
@@ -262,7 +262,7 @@ const fetchCategories = async () => {
 const selectCategory = async (category) => {
     selectedCategory.value = category
     try {
-        const { data } = await axios.get(`/data/gallery-photos/${category.id}`)
+        const { data } = await axios.get(`/api/gallery-photos/${category.id}`)
         galleryPhotos.value = data || []
     } catch (error) {
         console.error('Ошибка загрузки галереи:', error)
