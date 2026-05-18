@@ -62,7 +62,6 @@ return [
 //                (defined('PDO::MYSQL_ATTR_SSL_CA') ? constant('PDO::MYSQL_ATTR_SSL_CA') : 1012) => env('MYSQL_ATTR_SSL_CA'),
 //            ]) : [],
 //        ],
-
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
