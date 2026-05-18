@@ -27,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
         putenv('SESSION_DRIVER=cookie');
         $_ENV['SESSION_DRIVER'] = 'cookie';
 
+        putenv('SESSION_SECURE_COOKIE=true');
+        $_ENV['SESSION_SECURE_COOKIE'] = 'true';
+
         putenv('LOG_CHANNEL=stderr');
         $_ENV['LOG_CHANNEL'] = 'stderr';
 

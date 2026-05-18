@@ -25,8 +25,19 @@ class MediaUrl
             return $url;
         }
 
+        $path = ltrim($url, '/');
+
+        // Paths from DB often omit the public/storage prefix.
+        if (str_starts_with($path, 'storage/app/public/')) {
+            $path = 'storage/'.substr($path, strlen('storage/app/public/'));
+        } elseif (str_starts_with($path, 'app/public/')) {
+            $path = 'storage/'.substr($path, strlen('app/public/'));
+        } elseif (! str_starts_with($path, 'storage/')) {
+            $path = 'storage/'.$path;
+        }
+
         $base = rtrim((string) config('app.url'), '/');
 
-        return $base.'/'.ltrim($url, '/');
+        return $base.'/'.$path;
     }
 }

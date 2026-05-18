@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PhotoCategory extends Model
 {
-    protected $table = 'photo_categories';
-    protected $fillable = ['name', 'cover_image', 'photo_count'];
+    protected $table = 'photos';
+
+    protected $fillable = ['name', 'description', 'base_price', 'duration_hours', 'photo_count'];
 }

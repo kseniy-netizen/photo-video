@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "installCommand": "npm install",
+    "installCommand": "composer install --no-dev --optimize-autoloader && npm install",
     "buildCommand": "npm run build",
     "functions": {
         "api/index.php": {

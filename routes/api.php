@@ -3,7 +3,6 @@
 use App\Http\Controllers\Api\SiteContentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PhotoGalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +26,3 @@ Route::get('/studios', [SiteContentController::class, 'studios']);
 Route::get('/home-asset', [SiteContentController::class, 'homeAsset']);
 Route::get('/photo-categories', [SiteContentController::class, 'photoCategories']);
 Route::get('/gallery-photos/{categoryId}', [SiteContentController::class, 'galleryPhotos']);
-
-Route::get('/photo-categories', [PhotoGalleryController::class, 'categories']);
-Route::get('/gallery-photos/{categoryId}', [PhotoGalleryController::class, 'galleryPhotos']);
