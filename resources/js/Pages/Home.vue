@@ -1025,13 +1025,22 @@ h4 {
 
 .brand-mark__word--left {
     left: 45%;
+<<<<<<< HEAD
     transform: translate(calc(-100% - clamp(7rem, 18vw, 11rem)), -50%);
+=======
+    transform: translate(calc(-100% - clamp(7rem, 18vw, 11rem)), -40%);
+>>>>>>> a0a44d2579585891a144e1d1a09da87e10c4b6f5
     letter-spacing: 1px;
 }
 
 .brand-mark__word--right {
+<<<<<<< HEAD
     left: 54%;
     transform: translate(clamp(7rem, 18vw, 11rem), -50%);
+=======
+    left: 53%;
+    transform: translate(clamp(7rem, 18vw, 11rem), -40%);
+>>>>>>> a0a44d2579585891a144e1d1a09da87e10c4b6f5
 }
 
 .brand-mark__circle {
@@ -1130,11 +1139,11 @@ h4 {
     }
 
     .brand-mark__word--left {
-        transform: translate(calc(-100% - clamp(4.5rem, 14vw, 7rem)), -50%);
+        transform: translate(calc(-100% - clamp(4.5rem, 14vw, 7rem)), -40%);
     }
 
     .brand-mark__word--right {
-        transform: translate(clamp(4.5rem, 14vw, 7rem), -50%);
+        transform: translate(clamp(4.5rem, 14vw, 7rem), -40%);
     }
 
     .brand-mark__circle {

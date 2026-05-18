@@ -31,6 +31,7 @@ class SecurityHeaders
                 ."style-src-elem 'self' 'unsafe-inline' https://fonts.bunny.net https://fonts.googleapis.com; "
                 ."script-src 'self' 'unsafe-inline'; script-src-elem 'self' 'unsafe-inline'; "
                 ."connect-src 'self' https://fonts.bunny.net https://fonts.googleapis.com; "
+                ."frame-src 'self' https://kinescope.io https://*.kinescope.io; "
                 ."object-src 'none'"
             );
 
